@@ -3,7 +3,9 @@ import 'package:codeial/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginBody extends StatefulWidget {
-  const LoginBody({super.key});
+  const LoginBody({super.key, required this.onLoginPressed});
+
+  final VoidCallback onLoginPressed;
 
   @override
   State<LoginBody> createState() => _LoginBodyState();
@@ -67,7 +69,7 @@ class _LoginBodyState extends State<LoginBody> {
                           ),
                           const SizedBox(height: 24),
                           CustomElevatedButton(
-                            onPressed: () {},
+                            onPressed: widget.onLoginPressed,
                             buttonText: 'Sign In',
                             expand: true,
                             icon: Icons.login,

@@ -1,21 +1,14 @@
-import 'package:codeial/services/home/home.dart';
-import 'package:codeial/services/login/login_body.dart';
+import 'package:codeial/widgets/post.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  void _onLoginPressed() {
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute(builder: (context) => const HomeScreen()));
-  }
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         actions: [
           IconButton(
             onPressed: () {},
@@ -47,7 +41,19 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
       backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
-      body: Center(child: LoginBody(onLoginPressed: _onLoginPressed)),
+      body: LayoutBuilder(
+        builder: (ctx, constraints) {
+          return Center(
+            child: SizedBox(
+              width: constraints.maxWidth * 0.5,
+              child: ListView(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                children: const [Post(), SizedBox(height: 8), Post()],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }
