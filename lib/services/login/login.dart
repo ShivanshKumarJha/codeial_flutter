@@ -1,5 +1,6 @@
 import 'package:codeial/services/home/home.dart';
 import 'package:codeial/services/login/login_body.dart';
+import 'package:codeial/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,33 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Codeial',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.login,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(),
       backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
       body: Center(child: LoginBody(onLoginPressed: _onLoginPressed)),
     );
