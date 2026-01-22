@@ -13,6 +13,8 @@ class CustomElevatedButton extends StatelessWidget {
     this.elevation,
     this.borderRadius = 4,
     this.padding,
+    this.iconSize,
+    this.textStyle,
   });
 
   final VoidCallback onPressed;
@@ -25,6 +27,8 @@ class CustomElevatedButton extends StatelessWidget {
   final double? elevation;
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
+  final double? iconSize;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -47,15 +51,17 @@ class CustomElevatedButton extends StatelessWidget {
           ),
           const SizedBox(width: 8),
         ] else if (icon != null) ...[
-          Icon(icon, size: 18, color: fg),
+          Icon(icon, size: iconSize ?? 18, color: fg),
           const SizedBox(width: 8),
         ],
         Text(
           buttonText,
-          style: theme.textTheme.labelLarge?.copyWith(
-            color: fg,
-            fontWeight: FontWeight.w500,
-          ),
+          style:
+              textStyle ??
+              theme.textTheme.labelLarge?.copyWith(
+                color: fg,
+                fontWeight: FontWeight.w500,
+              ),
         ),
       ],
     );
@@ -66,8 +72,7 @@ class CustomElevatedButton extends StatelessWidget {
         backgroundColor: bg,
         foregroundColor: fg,
         elevation: elevation ?? 2,
-        padding:
-            padding ?? const EdgeInsets.all(18),
+        padding: padding ?? const EdgeInsets.all(18),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
         ),
