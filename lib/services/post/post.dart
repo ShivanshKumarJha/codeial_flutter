@@ -1,8 +1,10 @@
 import 'package:codeial/components/action_button_with_icon.dart';
+import 'package:codeial/services/post/post_model.dart';
 import 'package:flutter/material.dart';
 
 class Post extends StatelessWidget {
-  const Post({super.key});
+  const Post({super.key, required this.post});
+  final PostModel post;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,15 @@ class Post extends StatelessWidget {
               ),
             ),
             title: Text(
-              'Shivansh Jha',
+              post.authorName,
               style: theme.textTheme.bodyMedium!.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            subtitle: Text('2h ago', style: theme.textTheme.bodySmall),
+            subtitle: Text(
+              '${post.timeAgo} ago',
+              style: theme.textTheme.bodySmall,
+            ),
             trailing: Icon(
               Icons.more_horiz,
               color: theme.colorScheme.onSurface,
@@ -39,14 +44,14 @@ class Post extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Text(
-              'Just captured this breathtaking sunrise at the mountains! Nature never fails to amaze me. 🌄✨ #NaturePhotography #MountainViews',
+              post.content,
               style: theme.textTheme.bodyMedium,
             ),
           ),
           const SizedBox(height: 8),
           AspectRatio(
             aspectRatio: 16 / 9,
-            child: Image.asset('assets/images/sea.jpg', fit: BoxFit.cover),
+            child: Image.asset(post.postImage, fit: BoxFit.cover),
           ),
           const SizedBox(height: 8),
           Padding(
@@ -64,7 +69,7 @@ class Post extends StatelessWidget {
                     const SizedBox(width: 1),
                     Icon(Icons.insert_emoticon_outlined, size: 16),
                     const SizedBox(width: 2),
-                    Text('1,243', style: theme.textTheme.bodyMedium),
+                    Text('${post.likes}', style: theme.textTheme.bodyMedium),
                   ],
                 ),
                 Row(
@@ -72,9 +77,9 @@ class Post extends StatelessWidget {
                   children: [
                     Icon(Icons.visibility, size: 16),
                     const SizedBox(width: 2),
-                    Text('15,420 views', style: theme.textTheme.bodyMedium),
+                    Text('${post.views} views', style: theme.textTheme.bodyMedium),
                     const SizedBox(width: 16),
-                    Text('2 comments', style: theme.textTheme.bodyMedium),
+                    Text('${post.comments} comments', style: theme.textTheme.bodyMedium),
                   ],
                 ),
               ],

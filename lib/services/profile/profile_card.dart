@@ -1,8 +1,11 @@
 import 'package:codeial/components/custom_elevated_button.dart';
+import 'package:codeial/services/profile/profile_model.dart';
 import 'package:flutter/material.dart';
 
-class ProfileSuggestion extends StatelessWidget {
-  const ProfileSuggestion({super.key});
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({super.key, required this.profile});
+
+  final ProfileModel profile;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +20,12 @@ class ProfileSuggestion extends StatelessWidget {
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
-            leading: const CircleAvatar(
+            leading: CircleAvatar(
               radius: 20,
-              backgroundImage: AssetImage('assets/images/dp.jpeg'),
+              backgroundImage: AssetImage(profile.profileImage),
             ),
             title: Text(
-              'Shivansh Kumar Jha',
+              profile.name,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall?.copyWith(
@@ -34,7 +37,7 @@ class ProfileSuggestion extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '@shivanshkjha',
+                  '@${profile.username}',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.bodySmall?.copyWith(
@@ -48,12 +51,12 @@ class ProfileSuggestion extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: '34',
+                        text: '${profile.followers}',
                         style: const TextStyle(fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' followers  '),
                       TextSpan(
-                        text: '180',
+                        text: '${profile.following}',
                         style: const TextStyle(fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' following'),
@@ -65,7 +68,7 @@ class ProfileSuggestion extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 6),
           Row(
             children: [
               CustomElevatedButton(

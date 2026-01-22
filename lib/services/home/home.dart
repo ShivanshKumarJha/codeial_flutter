@@ -1,6 +1,8 @@
+import 'package:codeial/data/posts_data.dart';
+import 'package:codeial/data/profiles_data.dart';
 import 'package:codeial/widgets/custom_app_bar.dart';
-import 'package:codeial/widgets/post.dart';
-import 'package:codeial/widgets/profile_suggestion.dart';
+import 'package:codeial/services/post/post.dart';
+import 'package:codeial/services/profile/profile_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,9 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(
                 width: constraints.maxWidth * 0.55,
-                child: ListView(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  children: const [Post(), SizedBox(height: 8), Post()],
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) {
+                    return Post(post: posts[index]);
+                  },
+                  itemCount: posts.length,
                 ),
               ),
               Container(
@@ -45,32 +49,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Expanded(
-                      // TODO Currently hiding scrollbar for aesthetics
                       child: ScrollConfiguration(
                         behavior: ScrollConfiguration.of(
                           context,
                         ).copyWith(scrollbars: false),
-                        child: ListView(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          children: const [
-                            ProfileSuggestion(),
-                            SizedBox(height: 2),
-                            Divider(thickness: 1),
-                            SizedBox(height: 2),
-                            ProfileSuggestion(),
-                            SizedBox(height: 2),
-                            Divider(thickness: 1),
-                            SizedBox(height: 2),
-                            ProfileSuggestion(),
-                            SizedBox(height: 2),
-                            Divider(thickness: 1),
-                            SizedBox(height: 2),
-                            ProfileSuggestion(),
-                            SizedBox(height: 2),
-                            Divider(thickness: 1),
-                            SizedBox(height: 2),
-                            ProfileSuggestion(),
-                          ],
+                        child: ListView.separated(
+                          itemBuilder: (ctx, index) {
+                            return ProfileCard(profile: profiles[index]);
+                          },
+                          itemCount: profiles.length,
+                          separatorBuilder: (BuildContext context, int index) {
+                            return Divider(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurfaceVariant,
+                              height: 1,
+                              thickness: 1,
+                            );
+                          },
                         ),
                       ),
                     ),
