@@ -41,9 +41,11 @@ class ProfileCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.bodySmall?.copyWith(
+                    fontSize: 10,
                     color: cs.onSurfaceVariant,
                   ),
                 ),
+                const SizedBox(height: 4),
                 Text.rich(
                   TextSpan(
                     style: theme.textTheme.bodySmall?.copyWith(
@@ -52,14 +54,30 @@ class ProfileCard extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: '${profile.followers}',
-                        style: const TextStyle(fontWeight: FontWeight.w700),
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                      const TextSpan(text: ' followers  '),
+                      TextSpan(
+                        text: ' followers  ',
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontSize: 10,
+                        ),
+                      ),
                       TextSpan(
                         text: '${profile.following}',
-                        style: const TextStyle(fontWeight: FontWeight.w700),
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                      const TextSpan(text: ' following'),
+                      TextSpan(
+                        text: ' following',
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontSize: 10,
+                        ),
+                      ),
                     ],
                   ),
                   maxLines: 1,
