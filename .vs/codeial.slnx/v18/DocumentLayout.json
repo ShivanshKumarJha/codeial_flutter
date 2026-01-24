@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Shivansh\\Flutter\\codeial\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\custom_app_bar.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\widgets\\custom_app_bar.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\post.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\widgets\\post.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -27,19 +31,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "post.dart",
-              "DocumentMoniker": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\post.dart",
-              "RelativeDocumentMoniker": "lib\\widgets\\post.dart",
-              "ToolTip": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\post.dart",
-              "RelativeToolTip": "lib\\widgets\\post.dart",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
+              "Title": "custom_app_bar.dart",
+              "DocumentMoniker": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\custom_app_bar.dart",
+              "RelativeDocumentMoniker": "lib\\widgets\\custom_app_bar.dart",
+              "ToolTip": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\custom_app_bar.dart",
+              "RelativeToolTip": "lib\\widgets\\custom_app_bar.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-16T16:15:07.946Z",
+              "WhenOpened": "2026-01-23T19:38:58.015Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "post.dart",
+              "DocumentMoniker": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\post.dart",
+              "RelativeDocumentMoniker": "lib\\widgets\\post.dart",
+              "ToolTip": "C:\\Shivansh\\Flutter\\codeial\\lib\\widgets\\post.dart",
+              "RelativeToolTip": "lib\\widgets\\post.dart",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-16T16:15:07.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.dart",
               "DocumentMoniker": "C:\\Shivansh\\Flutter\\codeial\\lib\\main.dart",
               "RelativeDocumentMoniker": "lib\\main.dart",

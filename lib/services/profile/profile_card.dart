@@ -68,7 +68,7 @@ class ProfileCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height: 4),
           Row(
             children: [
               CustomElevatedButton(

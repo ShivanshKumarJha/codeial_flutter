@@ -35,6 +35,7 @@ class _LoginBodyState extends State<LoginBody> {
                   child: Image.asset(
                     'assets/images/intro.png',
                     fit: BoxFit.cover,
+                    height: double.infinity,
                   ),
                 ),
                 Expanded(

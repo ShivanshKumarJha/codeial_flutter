@@ -1,5 +1,6 @@
 import 'package:codeial/data/posts_data.dart';
 import 'package:codeial/data/profiles_data.dart';
+import 'package:codeial/services/post/create_post.dart';
 import 'package:codeial/widgets/custom_app_bar.dart';
 import 'package:codeial/services/post/post.dart';
 import 'package:codeial/services/profile/profile_card.dart';
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(showBackButton: false),
       backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
       body: LayoutBuilder(
         builder: (ctx, constraints) {
@@ -26,13 +27,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: constraints.maxWidth * 0.25,
                 child: Text('Sidebar'),
               ),
-              SizedBox(
+              Container(
                 width: constraints.maxWidth * 0.55,
-                child: ListView.builder(
-                  itemBuilder: (ctx, index) {
-                    return Post(post: posts[index]);
-                  },
-                  itemCount: posts.length,
+                padding: const EdgeInsets.all(12),
+                child: CustomScrollView(
+                  slivers: [
+                    const SliverToBoxAdapter(child: CreatePost()),
+                    const SliverToBoxAdapter(child: SizedBox(height: 12)),
+                    SliverList.separated(
+                      itemBuilder: (ctx, index) => Post(post: posts[index]),
+                      separatorBuilder: (ctx, index) =>
+                          const SizedBox(height: 12),
+                      itemCount: posts.length,
+                    ),
+                  ],
                 ),
               ),
               Container(

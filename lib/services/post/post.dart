@@ -13,7 +13,6 @@ class Post extends StatelessWidget {
       elevation: 4,
       color: theme.colorScheme.surface,
       clipBehavior: Clip.antiAlias,
-      margin: const EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,10 +42,7 @@ class Post extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            child: Text(
-              post.content,
-              style: theme.textTheme.bodyMedium,
-            ),
+            child: Text(post.content, style: theme.textTheme.bodyMedium),
           ),
           const SizedBox(height: 8),
           AspectRatio(
@@ -77,9 +73,15 @@ class Post extends StatelessWidget {
                   children: [
                     Icon(Icons.visibility, size: 16),
                     const SizedBox(width: 2),
-                    Text('${post.views} views', style: theme.textTheme.bodyMedium),
+                    Text(
+                      '${post.views} views',
+                      style: theme.textTheme.bodyMedium,
+                    ),
                     const SizedBox(width: 16),
-                    Text('${post.comments} comments', style: theme.textTheme.bodyMedium),
+                    Text(
+                      '${post.comments} comments',
+                      style: theme.textTheme.bodyMedium,
+                    ),
                   ],
                 ),
               ],

@@ -6,11 +6,15 @@ class CustomTextField extends StatefulWidget {
     required this.labelText,
     required this.obscureText,
     required this.hintText,
+    this.border = 4,
+    this.maxLines = 1,
   });
 
   final String labelText;
   final bool obscureText;
   final String hintText;
+  final double border;
+  final int maxLines;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -33,7 +37,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         label: Text(widget.labelText),
         hintText: widget.hintText,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(widget.border),
+        ),
         suffixIcon: widget.obscureText
             ? IconButton(
                 tooltip: _obscure ? 'Show password' : 'Hide password',
@@ -42,6 +48,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               )
             : null,
       ),
+      maxLines: widget.maxLines,
     );
   }
 }
