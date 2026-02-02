@@ -1,5 +1,5 @@
-import 'package:codeial/components/custom_elevated_button.dart';
-import 'package:codeial/services/profile/profile_model.dart';
+import 'package:codeial/presentation/components/custom_elevated_button.dart';
+import 'package:codeial/models/profile_model.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {

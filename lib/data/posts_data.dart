@@ -1,4 +1,4 @@
-import 'package:codeial/services/post/post_model.dart';
+import 'package:codeial/models/post_model.dart';
 
 const List<PostModel> posts = [
   PostModel(

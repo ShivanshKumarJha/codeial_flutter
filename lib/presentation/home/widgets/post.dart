@@ -1,5 +1,5 @@
-import 'package:codeial/components/action_button_with_icon.dart';
-import 'package:codeial/services/post/post_model.dart';
+import 'package:codeial/presentation/components/action_button_with_icon.dart';
+import 'package:codeial/models/post_model.dart';
 import 'package:flutter/material.dart';
 
 class Post extends StatelessWidget {

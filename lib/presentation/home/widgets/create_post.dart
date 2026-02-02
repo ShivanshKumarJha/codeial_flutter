@@ -1,5 +1,5 @@
-import 'package:codeial/components/custom_elevated_button.dart';
-import 'package:codeial/widgets/icon_actions_bar.dart';
+import 'package:codeial/presentation/components/custom_elevated_button.dart';
+import 'package:codeial/presentation/components/icon_actions_bar.dart';
 import 'package:flutter/material.dart';
 
 class CreatePost extends StatefulWidget {

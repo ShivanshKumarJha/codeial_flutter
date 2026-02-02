@@ -1,4 +1,4 @@
-import 'package:codeial/services/profile/profile_model.dart';
+import 'package:codeial/models/profile_model.dart';
 
 const List<ProfileModel> profiles = [
   ProfileModel(

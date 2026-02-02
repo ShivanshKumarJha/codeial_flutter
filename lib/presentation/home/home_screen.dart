@@ -1,9 +1,9 @@
 import 'package:codeial/data/posts_data.dart';
 import 'package:codeial/data/profiles_data.dart';
-import 'package:codeial/services/post/create_post.dart';
-import 'package:codeial/widgets/custom_app_bar.dart';
-import 'package:codeial/services/post/post.dart';
-import 'package:codeial/services/profile/profile_card.dart';
+import 'package:codeial/presentation/home/widgets/create_post.dart';
+import 'package:codeial/presentation/components/custom_app_bar.dart';
+import 'package:codeial/presentation/home/widgets/post.dart';
+import 'package:codeial/presentation/home/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

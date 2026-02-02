@@ -1,6 +1,6 @@
-import 'package:codeial/services/home/home.dart';
-import 'package:codeial/services/login/login_body.dart';
-import 'package:codeial/widgets/custom_app_bar.dart';
+import 'package:codeial/presentation/home/home_screen.dart';
+import 'package:codeial/presentation/login/widgets/login_container.dart';
+import 'package:codeial/presentation/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
